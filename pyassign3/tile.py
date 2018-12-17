@@ -144,7 +144,7 @@ def bricks(a,b,x,y):
     goto(x,y)
 
 
-def main1():
+def main():
     '''定义一个main函数，对所有函数进行调用，输出所有情况，并用turtle进行绘图'''
     l1=sum_brick(m,n,a,b)
     scheme(l1,[],(m*n)/(a*b),0)
@@ -154,6 +154,6 @@ def main1():
         size(i,m,n,a,b)
 
 if __name__ == '__main__':
-    main1()
+    main()
 
 
