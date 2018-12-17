@@ -49,7 +49,7 @@ def scheme(lis,l,n,a):
         for i in range(a,len(lis)):  
             if not conflict(lis[i],l):
                 l=l+[lis[i]]               
-                scheme(lis,l,n,i)
+                scheme(lis,l,n,i+1)
                 del l[-1]
 
 
