@@ -11,12 +11,12 @@ __email__  = "lijunhao@pku.edu.cn"
 
 def brick(m,n,a,b):
     '''在m*n的墙中横着摆a*b的砖的所有可能性'''
-    x=min(a,b)
+    width=min(a,b)
     l=[]
     for i in range(n-b+1):
-        if (x<=i<=n-x-b or i==n-b or i==0):
+        if (width<=i<=n-width-b or i==n-b or i==0):
             for j in range(m-a+1):
-                if (x<=j<=m-x-a or j==m-a or j==0):
+                if (width<=j<=m-width-a or j==m-a or j==0):
                     g=[]
                     for z in range(a*b):
                         g=g+[(i+z//a)*m+j+z%a]    
@@ -148,9 +148,10 @@ def main():
     '''定义一个main函数，对所有函数进行调用，输出所有情况，并用turtle进行绘图'''
     l1=sum_brick(m,n,a,b)
     scheme(l1,[],(m*n)/(a*b),0)
+    c=int(input('选择一项画出，输入数字,长度不要超出范围'))
     table(m,n)
     fill(m,n)
-    for i in lst[0]:
+    for i in lst[c]:
         size(i,m,n,a,b)
 
 if __name__ == '__main__':
