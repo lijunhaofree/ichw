@@ -44,13 +44,16 @@ def scheme(lis,l,n,a):
     if len(l)==n:
         l.sort()
         print(l)
-        lst=lst+[l.copy()]
+        lst=lst+[l.copy()]   
     else:
-        for i in range(a,len(lis)):  
-            if not conflict(lis[i],l):
-                l=l+[lis[i]]               
-                scheme(lis,l,n,i+1)
-                del l[-1]
+        for i in range(a,len(lis)):
+            if len(l)+len(lis)-a<n:
+                break
+            else:
+                if not conflict(lis[i],l):
+                    l=l+[lis[i]]               
+                    scheme(lis,l,n,i+1)
+                    del l[-1]
 
 
 
